@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, ScrollView, Text , Touchable, TouchableOpacity, View , Button } from 'react-native';
-import { ItemContainer, ItemName } from '../styles';
+import { FlatList, ScrollView, Text , Touchable, TouchableOpacity, View , 
+  Button , KeyboardAvoidingView , Platform } from 'react-native';
+import { ItemContainer, ItemName, RenderedItemContainer } from '../styles';
 import Addinput from './Addinput';
 import { deleteBP, fetchBulletPoints,  } from './Methods';
+
 
 
 interface BulletPoint {
@@ -37,25 +39,34 @@ interface BulletPoint {
     return(
      
 
-     <View>
+     <RenderedItemContainer >
          <Button
          title='Delete'
          onPress={() => handleDelete(item._id)}
          />
       <ItemName
       >{item.content}</ItemName>
-    </View>
+    </RenderedItemContainer>
  
   )}
 
   return (
-    <ItemContainer>
+  <KeyboardAvoidingView
+    style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={80} // adjust if header exists
+  >
+    <View style={{flex:1}} >
+    <ItemContainer style={{ flex: 1 }} >
       <FlatList
       data={bulletPoints}
       renderItem={renderItem}
       />
-       <Addinput onAdd={refreshBP} />
     </ItemContainer>
+    
+    <Addinput onAdd={refreshBP}/>
+    </View>
+   </KeyboardAvoidingView>
   )
 }
 

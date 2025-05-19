@@ -1,12 +1,12 @@
-import { Pressable, StatusBar, Text, View } from "react-native";
+import { View } from "react-native";
 import BPLists from "./components/BPlists";
-import Addinput from "./components/Addinput";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
+
+export default function HomeScreen() {
   return (
-    <View>
-   <BPLists/>
-    </View>
-
+    <SafeAreaView style = {{flex:1}}>
+      <BPLists/>
+    </SafeAreaView>
   );
 }

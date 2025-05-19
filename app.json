@@ -2,6 +2,9 @@
   "expo": {
     "name": "dynamiclists2",
     "slug": "dynamiclists2",
+    "extra": {
+    "API_URL": "https://dynamic-lists-server.onrender.com"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

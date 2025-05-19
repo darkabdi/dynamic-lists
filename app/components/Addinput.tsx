@@ -21,19 +21,20 @@ onAdd()
 }
    
   return (
- <ComponentContainer>
+ <View >
 
       <InputContainer>
         <TextInput placeholder="Add Task..." 
         value={value}
         onChangeText={setValue}
         />
-      </InputContainer>
-      <Button
+          <Button
       title='New Point'
       onPress={handleAdd}
       />
-    </ComponentContainer>
+      </InputContainer>
+    
+    </View>
   )
 }
 export default Addinput

@@ -3,12 +3,14 @@ import styled from 'styled-components/native'
 
 
 export const ItemContainer = styled.View`
-height: auto;
+ 
+  border: solid blue 1px;
   border-radius: 10px;
   padding: 20px;
   margin: 5px;
   border: solid 1px gray;
-  height: 95%;
+  
+
 `
 export const ItemName = styled.Text`
   font-size: 24px;
@@ -31,5 +33,13 @@ border: solid 1px black;
 margin: 5px;
 
 `
+export const RenderedItemContainer = styled.View `
 
-export default {InputContainer , ComponentContainer , ItemName , ItemContainer}
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`
+
+export default {InputContainer , ComponentContainer , ItemName , ItemContainer 
+  , RenderedItemContainer
+}
