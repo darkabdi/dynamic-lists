@@ -2,6 +2,7 @@
   "expo": {
     "name": "dynamiclists2",
     "slug": "dynamiclists2",
+    
     "extra": {
     "API_URL": "https://dynamic-lists-server.onrender.com"
     },
@@ -24,7 +25,8 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "manifest": "./assets/manifest.json"
     },
     "plugins": [
       "expo-router",
